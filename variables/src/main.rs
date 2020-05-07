@@ -6,6 +6,19 @@ fn main() {
     // println!("The value of x is: {}", x);
 
     // example of shadowing
+    // let x = 5; // 5
+    // let x = x + 1; // 6
+    // let x = x * 2; // 12
+
+    // shadowing construct allows us to change type of value while reusing the same name
+    let spaces = "   ";
+    let spaces = spaces.len()
+
+    // mutability can't do this
+    let mut spaces = "  ";
+    spaces = spaces.len(); // run time error
+
+
 }
 
 /**
@@ -34,5 +47,12 @@ not the result of a function call or any other value that could be computed at r
 // Rust's naming convention for constants is to use all uppercase with underscores btwn words
 
 constants are valid for the netire time a program runs, within the scope they were declared in
+
+shadowing is different from marking a variable as mut, because we'l lget a compile-time error if we accidentally try
+to reassign to this variable without using the let keyword. By using let, we can perform a few transormations
+on a value but have the variable be immutable after those transformations have been completed
+
+the other difference between mut and shadowing is that because we're effectively creating a new variable when
+we use the let keyword again, we can change the type of the value but reuse the same name.
 */
  
